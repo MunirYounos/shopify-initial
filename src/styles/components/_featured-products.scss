@@ -1,0 +1,44 @@
+.featured-products {
+	padding:1rem;
+	@media(min-width:768px){
+		padding:1rem 8rem;
+	}
+	&__heading {
+		font-size: 1rem;
+		text-transform: uppercase;
+		padding:1rem 0;
+		@media(min-width: 768px){
+			font-size: 1.8rem;
+		}
+	}
+	&__items{
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		grid-template-rows: auto;
+		grid-gap: 1rem;
+		@media(min-width: 768px){
+			grid-template-columns: repeat(4, 1fr);
+		}
+
+	}
+	&-tile{
+		background: lighten($dark, 76%);
+		padding:1rem 1rem 2rem 1rem;
+		overflow: hidden;
+		border-radius: 5px;
+		color: $dark;
+		&__info {
+			padding-top: 1rem;
+		}
+		&__title{
+			font-weight: $f-thin;
+			font-size: 0.9rem;
+			text-transform: uppercase;
+		}
+		&__price {
+			color: darken($accent, 10%);
+			line-height: 1.6;
+			font-weight: $f-bold;
+		}
+	}
+}
