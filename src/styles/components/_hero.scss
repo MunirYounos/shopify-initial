@@ -5,13 +5,11 @@
 	background-size: cover;
 	background-position: center center;
 	color: white;
-	height: 90vh;
-	padding:1rem;
+	height: 80vh;
 	position: relative;
 	width: 100%;
-	@media(min-width: 968px){
-		height: 80vh;
-		padding:4rem 8rem;
+	@include mq($lg){
+		height: 70vh;
 		justify-content: flex-start;
 		background-position: center right;
 	}
@@ -27,7 +25,7 @@
 	&__content{
 		position: relative;
 		width: 100%;
-		@media(min-width:968px){
+		@include mq($lg){
 			width:50%;
 			text-align: left;
 		}
@@ -55,7 +53,7 @@
 		font-size: 2.2rem;
 		text-transform: uppercase;
 		margin-bottom: 1rem;
-		@media(min-width: 768px){
+		@include mq($md){
 			font-size: 3rem;
 		}
 	}
@@ -65,7 +63,7 @@
 		margin-bottom: 1rem;
 		font-size: 1rem;
 		font-weight: $f-thin;
-		@media(min-width: 768px){
+		@include mq($md){
 			font-size: 1.2rem;
 		}
 

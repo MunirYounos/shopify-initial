@@ -1,8 +1,4 @@
 .featured-products {
-	padding:1rem;
-	@media(min-width:768px){
-		padding:1rem 8rem;
-	}
 	&__heading {
 		font-size: 1rem;
 		text-transform: uppercase;
@@ -15,7 +11,7 @@
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
 		grid-template-rows: auto;
-		grid-gap: 1rem;
+		grid-gap: .25rem;
 		@media(min-width: 768px){
 			grid-template-columns: repeat(4, 1fr);
 		}
@@ -23,7 +19,7 @@
 	}
 	&-tile{
 		background: lighten($dark, 76%);
-		padding:1rem 1rem 2rem 1rem;
+		padding:0.625rem 0.625rem 2rem 0.625rem;
 		overflow: hidden;
 		border-radius: 5px;
 		color: $dark;
@@ -40,5 +36,17 @@
 			line-height: 1.6;
 			font-weight: $f-bold;
 		}
+		&__image-wrapper{
+			overflow: hidden;
+		}
+		&__image{
+			display: block;
+			max-width: 100%;
+			transition: transform 500ms ease-in-out;
+			&:hover{
+				transform: scale(1.1);
+			}
+		}
 	}
+
 }

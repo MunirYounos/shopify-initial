@@ -4,7 +4,9 @@
 {% endcomment%}
 
 <a href="{{ product.url}}"  class="featured-products-tile">
-	<img src="{{product.featured_image | img_url: 'master'}}"  alt="{{ product.featured_image.alt}}">
+	<div class="featured-products-tile__image-wrapper">
+		<img class="featured-products-tile__image" src="{{product.featured_image | img_url: 'master'}}"  alt="{{ product.featured_image.alt}}">
+	</div>
 	<div class="featured-products-tile__info">
 		<h3 class="featured-products-tile__title">{{ product.title }}</h3>
 		<span class="featured-products-tile__price">{{ product.price | money }}</span>
