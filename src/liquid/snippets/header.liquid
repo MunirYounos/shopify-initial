@@ -1,11 +1,74 @@
-<div class="container">
+<div class="container-fullwidth">
+							{% if section.settings.message %}
+								{% if section.settings.home_page_only == false or request.page_type == 'index' %}
+									<style>
+										.topbar {
+											background-color: {{ section.settings.color_bg }};
+										}
+						
+										.topbar__link:hover {
+											{% assign brightness = section.settings.color_bg | color_brightness %}
+						
+											{% if brightness <= 192 %}
+												{% assign lightenAmount = 255 | minus: brightness | divided_by: 255 | times: 25 %}
+												background-color: {{ section.settings.color_bg | color_lighten: lightenAmount }};
+											{% else %}
+												{% assign darkenAmount = 255 | divided_by: brightness | times: 25 %}
+												background-color: {{ section.settings.color_bg | color_darken: darkenAmount }};
+											{% endif %}
+										}
+						
+										.topbar__message {
+											color: {{ section.settings.color_text }};
+										}
+												</style>
+				<div class="topbar" role="region" data-section-id="{{ section.id }}" data-section-type="header-section" data-header-section>
+						<div class="container">
+							<div class="topbar__wrapper" role="region" aria-label="{{ 'sections.header.announcement_bar_label' | t }}">
+								<div class="topbar__message"><p class="topbar__message-p">{{ section.settings.message_text | escape }}</p></div>
+								{%- unless section.settings.message_link == blank -%}
+				
+									<a href="{{ section.settings.message_link }}" class="topbar__link">
+								{%- endunless -%}
+									
+								{%- unless section.settings.message_btn == blank -%}
+									 {{ section.settings.message_btn }}</a>
+								{%- endunless -%}
+							</div>
+				
+						{% endif %}
+					{% endif %}
+			</div>
+		</div>
+		<div class="container">
 	<div class="header">
 		<div class="header__wrapper">
-		<span class="logo">	Anodyne-shop</span>
-			<!-- <a href="/" class="header__logo-wrapper">
-				<img src="{{ settings.logo  | img_url: 'master' }}" alt="{{ settings.logo.alt }}" class="header__logo">
-			</a> -->
-			{% render 'nav' %}
+
+			{% if section.settings.logo %}
+			{%- assign img_url = section.settings.logo | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+			<a href="{{ routes.root_url }}" class="site-header__logo-image{% if section.settings.align_logo == 'center' %} site-header__logo-image--centered{% endif %}" data-image-loading-animation>
+				{% capture logo_alt %}{{ section.settings.logo.alt | default: shop.name }}{% endcapture %}
+				<img class="lazyload js"
+						 src="{{ section.settings.logo | img_url: '300x300' }}"
+						 data-src="{{ img_url }}"
+						 data-widths="[180, 360, 540, 720, 900, 1080, 1296, 1512, 1728, 2048]"
+						 data-aspectratio="{{ section.settings.logo.aspect_ratio }}"
+						 data-sizes="auto"
+						 alt="{{ logo_alt | escape }}"
+						 style="max-width: {{ section.settings.logo_max_width }}px">
+				<noscript>
+					{% capture image_size %}{{ section.settings.logo_max_width | escape }}x{% endcapture %}
+					<img src="{{ section.settings.logo | img_url: image_size }}"
+							 srcset="{{ section.settings.logo | img_url: image_size }} 1x, {{ section.settings.logo | img_url: image_size, scale: 2 }} 2x"
+							 alt="{{ section.settings.logo.alt | default: shop.name }}"
+							 style="max-width: {{ section.settings.logo_max_width }}px;">
+				</noscript>
+			</a>
+		{% else %}
+			<a class="site-header__logo-link" href="{{ routes.root_url }}">{{ shop.name }}</a>
+		{% endif %}
+		{% render 'nav' %}
 		</div>
 	</div>
+</div>
 </div>

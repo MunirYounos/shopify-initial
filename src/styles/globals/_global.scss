@@ -28,7 +28,6 @@ a{
 	color:$rose;
 }
 .container {
-position: relative;
 margin: 0 auto;
 padding:0 1rem;
 @include mq($md){
@@ -36,6 +35,11 @@ padding:0 2rem;
 max-width: $xl;
 }
 }
+.container-fullwidth {
+	position: relative;
+	margin: 0 auto;
+	max-width: 100%;
+	}
 .pd{
 	margin-bottom: 0.5rem;
 	@include mq($md){

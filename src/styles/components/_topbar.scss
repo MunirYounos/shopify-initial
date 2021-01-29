@@ -1,0 +1,21 @@
+.topbar{
+	position: sticky;
+	padding:.5rem 0;
+	&__wrapper{
+		display: flex;
+    justify-content: center;
+    align-items: center;
+	}
+	&__link{
+		margin: 0 1rem;
+		padding: .2rem .8rem;
+		border-radius: 50px;
+		color:white;
+		font-size: 0.9232rem;
+		background-color: $dark;
+	}
+	&__message-p{
+		font-size: 0.9232rem;
+		font-weight: $f-bold;
+	}
+}

@@ -1,0 +1,25 @@
+<div class="product">
+	<div class="container">
+		<div class="product__main">
+			<div class="product__images">
+				<img src="{{ product.featured_image  |  img_url: 'master' }}" alt="{{ product.featured_image.alt }}" class="product__image">
+			</div>
+			<div class="product__details">
+				<div class="product__info">
+					<h2 class="product__title ">
+					{{ product.title }}
+					</h2>
+					<strong class="product__price">{{ product.price | money }}</strong>
+					<div class="product__description">
+						{{ product.description }}
+					</div>
+				</div>
+
+				{% comment %}
+				Comes product form here
+				
+				{% endcomment %}
+			</div>
+		</div>
+	</div>
+</div>

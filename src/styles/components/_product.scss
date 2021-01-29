@@ -1,0 +1,36 @@
+.product{
+margin-top: 2rem;
+	&__main{
+		grid-gap:1rem;
+		@include mq($lg){
+			display: grid;
+			grid-template-columns: repeat(2,1fr);
+		}
+	}
+	&__images{
+		padding:1rem;
+		background:lighten($dark, 76%);
+		overflow:hidden;
+		border-radius: 5px;
+	}
+	&__info{
+		padding: .5rem;
+
+	}
+	&__title{
+		font-size: 1.2rem;
+		margin:2rem 0 .5rem 0;
+		@include mq($lg){
+			margin-top: 0;
+		}
+	}
+	&__price{
+		color: darken($accent, 10%);
+		line-height: 2;
+	}
+	&__description{
+		color:lighten($dark,10%);
+		font-size: 0.8275rem;
+		line-height: 1.6;
+	}
+}

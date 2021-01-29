@@ -888,6 +888,11 @@
   resolved "https://registry.yarnpkg.com/@rollup/stream/-/stream-1.1.0.tgz#9e57fab95421c64346f0d813efa66f2e5a36a9fb"
   integrity sha512-agGnt8GhRPo3C5RIJIA7cI7DW3vGj1k4xKCxx2qQgYk1pE4mzupPhsbDHD1waVNc4U6cav7EzQ55MN5OS3zBWg==
 
+"@shopify/theme-cart@^4.1.0":
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/@shopify/theme-cart/-/theme-cart-4.1.0.tgz#eca2f2985a46af5c4d40f54be8db2b244edc1fc0"
+  integrity sha512-g4A88V+CrnkHu1JtwB+r/MakJs9DBvHBzafYwijFhK13D959HhG4DYOD475JSted0QReft+ce4F7z5/cA5vIBw==
+
 "@shopify/themekit@^1.1.6":
   version "1.1.7"
   resolved "https://registry.yarnpkg.com/@shopify/themekit/-/themekit-1.1.7.tgz#06a1b81cca12b744c3fb72c9d937fd78793a83db"
